@@ -6,7 +6,7 @@ describe Review do
   it { should validate_presence_of :content }
   it { should validate_presence_of :rating }
   it { should validate_presence_of :product_id }
-  it {should validate_length_of(:content). is_at_least(50).is_at_most(250)}
-  # it {should validate_numericality_of(:rating).is_less_than_or_equal_to(5)}
-  # it {should validate_numericality_of(:product_id).is_less_than_or_equal_to(50)}
+  it { should validate_length_of(:content). is_at_least(50).is_at_most(250) }
+  it { should validate_numericality_of(:rating).is_less_than_or_equal_to(5) }
+  # it { should validate_numericality_of(:product_id).is_less_than_or_equal_to(50) }
 end
