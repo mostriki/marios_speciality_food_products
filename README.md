@@ -19,7 +19,7 @@ _The landing page should include basic information about the company and should 
 * _Users should be able to see product with the most reviews._
 * _Users should be able to see the three most recently added products._
 * _Users who want to buy local products should be able to see all products made in the USA._
-* _Users should if any fields are not filled out, including rating._
+* _Users should not be able to submit if any fields are not filled out, including rating._
 * _Users should only be able to add an integer between 1 and 5 to the rating._
 * _Users should only be able to leave review between 50 and 250 characters._
 * _Users should see seed data for 50 products and 250 reviews._
