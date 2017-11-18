@@ -1,6 +1,6 @@
 <h1>Products</h1>
 
-<ul>
+<ul class="list-unstyled">
   <% @products.each do |product| %>
     <li><%= link_to product.name, product_path(product) %> $<%= product.cost %>.00 <%= product.origin %></li>
   <% end %>
