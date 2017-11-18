@@ -1,7 +1,7 @@
 Product.destroy_all
 
 50.times do |index|
-  Product.create!(name: Faker::Food.dish, cost: Faker::Number.decimal(2, 2), origin: Faker::Address.country)
+  Product.create!(name: Faker::Food.dish, cost: Faker::Number.between(1, 20), origin: Faker::Address.country)
 end
 
 Review.destroy_all
