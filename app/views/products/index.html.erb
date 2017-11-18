@@ -1,9 +1,53 @@
 <h1>Products</h1>
 
-<ul class="list-unstyled">
-  <% @products.each do |product| %>
-    <li><%= link_to product.name, product_path(product) %> $<%= product.cost %>.00 <%= product.origin %></li>
-  <% end %>
-</ul>
+
+<% if @products.any? %>
+  <h4>Here are the three most recent products:</h4>
+
+  <ul class="list-unstyled">
+    <% @products.three_most_recent.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %> $<%= product.cost %>.00 <%= product.origin %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
+
+<% if @products.any? %>
+  <h4>Here are products made in the USA:</h4>
+
+  <ul class="list-unstyled">
+    <% @products.made_in_the_usa.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %> $<%= product.cost %>.00 <%= product.origin %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
+
+
+<% if @products.any? %>
+  <h4>Here are 10 of our products:</h4>
+
+  <ul class="list-unstyled">
+    <% @products.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %> $<%= product.cost %>.00 <%= product.origin %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
+
+<% if @products.any? %>
+  <h4>Here the products with the most reviews:</h4>
+
+  <ul class="list-unstyled">
+    <% @products.most_reviews.each do |product| %>
+      <li><%= link_to product.name, product_path(product) %> $<%= product.cost %>.00 <%= product.origin %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
 
 <%= link_to "Create", new_product_path %>
