@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "the add a review process" do
   it "adds a new review" do
-    product = Product.create(:id => 1, :name => 'Yvonne', :cost => 20, :origin => 'United States of America')
+    product = Product.create(:name => 'Yvonne', :cost => 20, :origin => 'United States of America')
     visit product_path(product)
     click_link 'Add Review'
     fill_in 'Author', :with => 'Sarah'

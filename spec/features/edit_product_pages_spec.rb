@@ -2,8 +2,8 @@ require 'rails_helper'
 
 describe "the edit a product process" do
   it "edits a product" do
-    product = Product.create(:name => 'Yvonne', :cost => 20, :origin => 'United States of America')
-    review = Review.create(:author => 'Steve', :content => 'Lorem ipsum dolor sit amet, consectetuer adipiscing', :rating => 3, :product_id => product.id)
+    product = Product.create!(:name => 'Yvonne', :cost => 20, :origin => 'United States of America')
+    review = product.reviews.create!(:author => 'Steve', :content => 'Lorem ipsum dolor sit amet, consectetuer adipiscing', :rating => 3)
     visit product_path(product)
     click_on 'Edit Product'
     fill_in 'Name', :with => 'Veronica'
@@ -14,8 +14,8 @@ describe "the edit a product process" do
   end
 
   it "gives error when no description is entered" do
-    product = Product.create(:name => 'Yvonne', :cost => 20, :origin => 'United States of America')
-    review = Review.create(:author => 'Steve', :content => 'Lorem ipsum dolor sit amet, consectetuer adipiscing', :rating => 3, :product_id => product.id)
+    product = Product.create!(:name => 'Yvonne', :cost => 20, :origin => 'United States of America')
+    review = product.reviews.create!(:author => 'Steve', :content => 'Lorem ipsum dolor sit amet, consectetuer adipiscing', :rating => 3)
     visit product_path(product)
     click_on 'Edit Product'
     fill_in 'Name', :with => ''
