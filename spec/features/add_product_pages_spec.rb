@@ -11,9 +11,9 @@ describe "the add a product process" do
     expect(page).to have_content 'Products'
   end
 
-  # it "gives error when no name is entered" do
-  #   visit new_product_path
-  #   click_on 'Create Product'
-  #   expect(page).to have_content 'errors'
-  # end
+  it "gives error when no name is entered" do
+    visit new_product_path
+    click_on 'Create Product'
+    expect(page).to have_content 'errors'
+  end
 end
