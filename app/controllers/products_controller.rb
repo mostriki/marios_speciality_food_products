@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     if @product.save
-    #  flash[:notice] = "Thanks for adding to our menu!"
+      flash[:notice] = "Thanks for adding to our menu!"
       redirect_to  products_path
     else
       render :new
@@ -36,8 +36,10 @@ class ProductsController < ApplicationController
 
   def destroy
     @product = Product.find(params[:id])
-    @product.destroy
-    redirect_to products_path
+    if @product.destroy
+      flash[:alert] = "You have deleted the product #{@product.name}!"
+      redirect_to products_path
+    end
   end
 
 private
